@@ -1,0 +1,25 @@
+peline{
+    agent any
+    stages{
+        stage('clone'){
+            steps{
+                git branch: 'main', url: 'git@github.com:Nagaraj1222/spring-petclinic.git'
+            }
+        }
+        stage('build'){
+            steps{
+                sh 'mvn package'
+            }
+        }
+        stage('test'){
+            steps{
+                sh 'mvn test'
+            }
+        }
+        stage('deploy'){
+            stages{
+                echo 'HARE KRISHNA RADHE RADHE'
+            }
+        }
+    }
+}
